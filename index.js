@@ -4,8 +4,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 
+
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://passport:passport@192.168.112.94:27017/passport');
+if (process.env.NODE_ENV == 'dev') {
+    mongoose.connect('mongodb://passport:passport@192.168.112.94:27017/passport');
+} else {
+    mongoose.connect('mongodb://127.0.0.1:27017/passport');
+}
+
+
+
 var MongoStore = require('connect-mongo')(session);
 var app = express();
 

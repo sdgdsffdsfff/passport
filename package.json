@@ -7,6 +7,9 @@
   "bin": {
     "passport": "bin/www"
   },
+  "scripts": {
+    "start": "NODE_ENV=dev node ./bin/www"
+  },
   "engines": {
     "node": ">= 0.8.0"
   },
