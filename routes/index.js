@@ -12,6 +12,7 @@ router.get('/', function (req, res) {
 
 router.get('/user', function (req, res) {
     var token = req.query.token;
+    console.log(token);
     Token.getToken(token, function (err, tokenEntity) {
         if (err || !tokenEntity) {
             res.status('500');
