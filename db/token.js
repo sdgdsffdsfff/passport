@@ -37,6 +37,7 @@ TokenSchema.static('delExpiredToken', function (expiredDate) {
 
         if (tokens) {
             tokens.forEach(function (oneToken) {
+                console.log(oneToken.expires , expiredDate,oneToken.expires < expiredDate);
                 if (oneToken.expires < expiredDate) {
                     me.findOneAndRemove({
                         tempToken: oneToken.tempToken
