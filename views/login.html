@@ -3,9 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title><%=title%></title>
+    <title>MXC用户系统</title>
 </head>
 <body>
-
+<form method="post" action="/login">
+    <label>用户名:</label> <input type="text"  name="username" placeholder="请输入用户名">
+    <label>密码:</label><input type="password" name="password" placeholder="请输入密码">
+    <input type="hidden" name="backUrl" value="<%=backUrl%>"/>
+    <button type="submit" >登录</button>
+</form>
 </body>
 </html>
