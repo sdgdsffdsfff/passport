@@ -1,16 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>MXC用户系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="/css/login.css"/>
 </head>
 <body>
-<form method="post" action="/login">
-    <label>用户名:</label> <input type="text"  name="username" placeholder="请输入用户名">
-    <label>密码:</label><input type="password" name="password" placeholder="请输入密码">
-    <input type="hidden" name="backUrl" value="<%=backUrl%>"/>
-    <button type="submit" >登录</button>
-</form>
+<div class="htmleaf-container">
+    <div class="login">
+        <div class="photo">
+        </div>
+        <form id="login-form" method="post">
+            <input type="hidden"  id="backUrl" name="backUrl" value="<%=backUrl%>"/>
+
+            <div id="u" class="form-group">
+                <input id="username" spellcheck=false class="form-control" name="username" type="text" size="18"
+                       alt="login" required="">
+                <span class="form-highlight"></span>
+                <span class="form-bar"></span>
+                <label for="username" class="float-label">用户名</label>
+                <erroru>
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24h-24z" fill="none"/>
+                            <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                        </svg>
+                    </i>
+                </erroru>
+            </div>
+            <div id="p" class="form-group">
+                <input id="password" class="form-control" spellcheck=false name="password" type="password" size="18"
+                       alt="login" required="">
+                <span class="form-highlight"></span>
+                <span class="form-bar"></span>
+                <label for="password" class="float-label">密码</label>
+                <errorp>
+
+                    <i>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M0 0h24v24h-24z" fill="none"/>
+                            <path d="M1 21h22l-11-19-11 19zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+                        </svg>
+                    </i>
+                </errorp>
+            </div>
+            <div class="form-group">
+                <button id="submit" type="submit" ripple>登录</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="//libs.useso.com/js/jquery/1.10.0/jquery.min.js"></script>
+<script src="/js/login.js"></script>
 </body>
 </html>

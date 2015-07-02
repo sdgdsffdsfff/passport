@@ -39,7 +39,13 @@ router.post('/', function (req, res, next) {
                 }
 
                 if (codeEntity) {
-                    res.redirect(backUrl + '?code=' + codeEntity.tempCode);
+                    res.status('200');
+                    res.send({
+                        success: true,
+                        model: {
+                            backUrl: backUrl + '?code=' + codeEntity.tempCode
+                        }
+                    });
                 }
 
             });
