@@ -94,7 +94,7 @@ $(document).ready(function () {
         if (flag) {
             $.ajax({
                 method: "POST",
-                url: "/login",
+                url: "/passport/login",
                 data: {
                     username: name,
                     password: pd,
